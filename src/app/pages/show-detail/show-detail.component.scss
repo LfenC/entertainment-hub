@@ -1,0 +1,43 @@
+
+::ng-deep{
+    .p-tabview .p-tabview-nav{
+        justify-content: center;
+    }
+
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+        color: rgb(149, 98, 194);
+    }
+
+    .p-tabview .p-tabview-nav .p-tabview-ink-bar{
+        background-color:  rgb(149, 98, 194);
+    }
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link{
+        color: rgb(55, 2, 154);
+        font-weight: 300;
+    }
+
+    .p-tabview .p-tabview-panels {
+        color: rgb(63, 0, 181);
+    }
+
+
+}
+
+.poster{
+    max-width: 100%;
+}
+
+.overview{
+    line-height: 1.5;
+}
+
+.stat{
+    display: flex;
+    margin-bottom: 15px;
+    .label{
+        width: 150px;
+        font-weight: bold;
+    }
+
+}
+

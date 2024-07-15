@@ -1,0 +1,48 @@
+
+
+.show-item{
+    display: block;
+    height: 425px;
+    position: relative;
+
+    &-image{
+        height: 375px;
+        img{
+            width: 100%;
+            border-radius: 15px 15px 0 0 ;
+            height: 375px;
+            object-fit: cover;
+            margin: 0 2px 0 2px;
+  
+        }
+    }
+    &-rating{
+        position: absolute;
+        display:flex;
+        align-items: center;
+        top: 25px;
+        left: 25px;
+        background-color: #212e54;
+        border-radius: 5px;
+        padding: 5px 10px;
+       
+
+        .pi{
+            font-size: 1rem;
+            color:#823dac;
+            margin-right: 5px;
+        }
+    }
+
+    &-title{
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 50px;
+        background: #823dac ;
+        width: 100%;
+        margin: 0 2px 0 2px;
+        border-radius: 0 0 15px 15px ;
+        padding: 0 10px;
+    }
+}

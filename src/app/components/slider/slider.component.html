@@ -1,0 +1,30 @@
+
+<div class="slider" *ngIf="slides">
+    <ng-container *ngFor="let popularMovie of slides; let movieIndex = index">
+    <div class="slide" *ngIf="movieIndex === slideIndex" @slideFade>
+        <div class="slide-bg">
+            <img class="image" [src]="popularMovie.image" 
+            [alt]="popularMovie.title">
+        </div>
+        <div class="slide-pane">
+            <h2 class="title">{{popularMovie.title}}</h2>
+            <div class="meta mb-4">
+                <div class="rating">
+                    <i class="pi pi-star-fill"></i>
+                    <span> {{popularMovie.rating}}</span>
+                    <span> /10</span>
+                </div>
+                <div class="votes mb-1">
+                    <i class="pi pi-users"></i>
+                    <span>{{popularMovie.votes}}</span>
+                </div>
+                <div class="release-date mb-1">
+                    <i class="pi pi-calendar"></i>
+                    <span> {{popularMovie.release_date | date : 'yyyy'}}</span>
+                </div>
+            </div>
+            <div class="description">{{popularMovie.description}}</div>
+        </div>
+    </div>
+</ng-container>
+</div>

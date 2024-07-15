@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'modern-normalize/modern-normalize';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import '../node_modules/primeflex/primeflex.css';
+@import 'primeicons/primeicons.css';
+@import 'primeng/resources/themes/mdc-dark-indigo/theme.css';
+@import "primeng/resources/primeng.css";
+
+
+body{
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    color: white;
+    background-color: #e5f1f8;
+}
+
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(55, 2, 154);
+}
+
+.container{
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
