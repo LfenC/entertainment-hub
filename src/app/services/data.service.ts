@@ -8,10 +8,11 @@ import { Movie } from '../models/movie';
   providedIn: 'root'
 })
 export class DataService {
-  private jsonUrl = 'assets/movies.json'
+  private jsonUrl = 'assets/movies.json';
+  private favoriteItemsList: Movie[] = [];
 
   constructor(private http: HttpClient) { }
-  
+
   //son mis destacadas en los cards
   getPopularMovies(): Observable<Movie[]> {
     return this.http.get<{ movies: Movie[] }>(this.jsonUrl).pipe(
@@ -44,6 +45,31 @@ export class DataService {
     return this.http.get<{movies: Movie[]}> (this.jsonUrl).pipe(
       map(data => data.movies.find(movie => movie.index.toString() === index)?.video)
     );
+  }
+
+  toggleFavoritesList(item: Movie): void {
+    const index = this.favoriteItemsList.findIndex(movie => movie.index === item.index);
+    //condition to add to the list
+    if (index > -1) {
+      this.favoriteItemsList.splice(index, 1);
+    } else {
+      this.favoriteItemsList.push(item);
+    }
+  }
+
+  isInFavorite(movie:Movie) : boolean {
+    return this.favoriteItemsList.some(showItem => showItem.index === movie.index);
+  }
+
+  addToFavoritesList(movie: Movie): void {
+    this.favoriteItemsList.push(movie);
+  }
+
+  removeFromFavoritesList(movie: Movie): void {
+    const index = this.favoriteItemsList.findIndex(showItem => showItem.index === movie.index);
+    if (index !== -1) {
+      this.favoriteItemsList.splice(index, 1);
+    }
   }
 }
 

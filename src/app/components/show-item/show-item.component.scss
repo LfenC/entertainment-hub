@@ -1,8 +1,8 @@
 
 
-.show-item{
+.show-item {
     display: block;
-    height: 425px;
+    height: 375px;
     position: relative;
 
     &-image{
@@ -13,7 +13,7 @@
             height: 375px;
             object-fit: cover;
             margin: 0 2px 0 2px;
-  
+
         }
     }
     &-rating{
@@ -25,7 +25,6 @@
         background-color: #212e54;
         border-radius: 5px;
         padding: 5px 10px;
-       
 
         .pi{
             font-size: 1rem;
@@ -34,9 +33,10 @@
         }
     }
 
-    &-title{
+    &-title {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-weight: bold;
         height: 50px;
         background: #823dac ;
@@ -44,5 +44,22 @@
         margin: 0 2px 0 2px;
         border-radius: 0 0 15px 15px ;
         padding: 0 10px;
+
+        .heart-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+            .pi-heart {
+                color: #ffffff;
+                font-size: 1.5rem;
+                transition: color 0.3s ease, tranform 0.3s ease;
+            }
+
+            .heart-button.active .pi-heart {
+                color: #f630c4;
+                transform: scale(1.3);
+            }
     }
 }
