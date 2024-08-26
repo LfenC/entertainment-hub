@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../models/movie';
+import { MovieDto } from '../../models/movie';
+import { tvShowDto } from '../../models/tvshow';
 
 @Component({
   selector: 'app-banner',
@@ -9,7 +10,8 @@ import { Movie } from '../../models/movie';
 
 export class BannerComponent{
 
-  @Input() shows : Movie[] = [];
+  @Input() shows : MovieDto[] | tvShowDto [] = [];
   @Input() title = '';
+  @Input() showsType: 'tvshows' | 'Movies' = 'Movies';
 
-} 
+}

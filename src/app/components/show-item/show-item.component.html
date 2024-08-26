@@ -1,11 +1,11 @@
-<div *ngIf="showItem">
-<a class="show-item" [routerLink]="'detail/' + showItem.index">
-    <div class="show-item-rating">
+<div *ngIf="showItem" >
+  <a class="show-item" [routerLink]="'detail/' + showItem.id + '/' + showType">
+        <div class="show-item-rating">
         <i class="pi pi-star-fill"></i>
         <span>{{showItem.rating}} /10</span>
     </div>
     <div class="show-item-image">
-        <img [src]="showItem.image" [alt]="showItem.title">
+        <img [src]="showItem.imageUrl" [alt]="showItem.title">
     </div>
 </a>
     <div class="show-item-title"> {{showItem.title}}

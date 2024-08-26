@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="grid">
+    <div class="col-12 genres-links">
+      <ng-container *ngIf="genres$ | async as genres">
+        <a *ngFor="let genre of genres"
+        (click) ="filterByGenre(genre.genreId)"
+          role = "button"
+          aria-hidden="true"
+          >
+          {{genre.name}} </a>
+      </ng-container>
+    </div>
+  </div>
+  <ng-container *ngIf="filteredMovies.length >0">
+    <div class="grid">
+      <div class="col-2" *ngFor="let show of filteredMovies">
+        <app-show-item [showItem]="show"/>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="filteredMovies.length === 0">
+    <p>No se encontraron películas dle género seleccionado</p>
+  </ng-container>
+</div>
+
+
+<!--(click) ="filterByGenre(genre.genreId)"-->

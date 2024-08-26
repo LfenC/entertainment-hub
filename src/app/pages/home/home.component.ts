@@ -13,7 +13,11 @@ export class HomeComponent {
   upcomingMovie$ = this.dataService.getUpcomingMovies();
   topRatedMovies$ = this.dataService.getTopRatedMovies();
 
-  popularTvshows$ = this.tvshowsService.getTvShowsByType('popular');
+  popularTvshows$ = this.tvshowsService.getPopularTvShows();
+  upcomingTvshows$ = this.tvshowsService.getUpcomingTvShows();
+  topRatedTvshows$ = this.tvshowsService.getTopRatedTvShows();
+
+
 
   constructor(
     private dataService: DataService,

@@ -1,54 +1,67 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Movie } from '../models/movie';
+import { MovieDto, MovieGenresDto } from '../models/movie';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private jsonUrl = 'assets/movies.json';
-  private favoriteItemsList: Movie[] = [];
+  private apiUrl = 'https://localhost:7249/api';
+  private favoriteItemsList: MovieDto[] = [];
 
   constructor(private http: HttpClient) { }
 
   //son mis destacadas en los cards
-  getPopularMovies(): Observable<Movie[]> {
-    return this.http.get<{ movies: Movie[] }>(this.jsonUrl).pipe(
-      map(data => data.movies.filter(movie => movie.featured))
+  getPopularMovies():  Observable<MovieDto[]> {
+    return this.http.get<MovieDto[]>(
+      `${this.apiUrl}/Movies/popular`
+    );
+  }
+  getAllMovies(): Observable<MovieDto[]>{
+    return this.http.get<MovieDto[]>(
+      `${this.apiUrl}/Movies`
     );
   }
 
-  getUpcomingMovies(): Observable<Movie[]> {
-    return this.http.get<{ movies: Movie[] }>(this.jsonUrl).pipe(
-      map(data => data.movies.filter(movie => movie.type === 'upcoming'))
+  getUpcomingMovies(): Observable<MovieDto[]> {
+    return this.http.get<MovieDto[]>(
+      `${this.apiUrl}/Movies/upcoming`
     );
   }
 
-  getTopRatedMovies(): Observable<Movie[]> {
-    return this.http.get<{ movies: Movie[] }>(this.jsonUrl).pipe(
-      map(data => data.movies.filter(movie => {
-        const ratingAsNumber = parseFloat(movie.rating);
-        return ratingAsNumber >= 5;
-      }))
+  //get top rated movies
+  getTopRatedMovies(): Observable<MovieDto[]> {
+    return this.http.get<MovieDto[]>(`${this.apiUrl}/Movies`).pipe(
+      map(movies => movies.filter(movie => movie.rating >=5))
     );
   }
 
-  getMovieById(index: string): Observable<Movie | undefined> {
-    return this.http.get<{movies: Movie[]}> (this.jsonUrl).pipe(
-      map(data => data.movies.find(movie => movie.index.toString() === index))
-    );
+  //GET movie by Id
+  getMovieById(id: number): Observable<MovieDto> {
+    return this.http.get<MovieDto>(`${this.apiUrl}/Movies/${id}`);
   }
 
-  getMovieVideos(index: string): Observable<string | undefined> {
-    return this.http.get<{movies: Movie[]}> (this.jsonUrl).pipe(
-      map(data => data.movies.find(movie => movie.index.toString() === index)?.video)
-    );
+  //GET genres list
+  getMovieGenres():Observable<MovieGenresDto[]>{
+    return this.http.get<MovieGenresDto[]>(`${this.apiUrl}/Movies/movies/genres`);
+  }
+  //get genres by id to display movies
+  getMoviesByGenreId(genreId:number): Observable<MovieDto[]>{
+    return this.http.get<MovieDto[]>(`${this.apiUrl}/Movies`).pipe(
+      map(movies => movies.filter(movie => movie.genres.some(genre => genre.genreId === genreId)))
+    )
   }
 
-  toggleFavoritesList(item: Movie): void {
-    const index = this.favoriteItemsList.findIndex(movie => movie.index === item.index);
+  // GET videos
+  getMovieVideos(id: number): Observable<string | undefined> {
+    return this.http.get<string>(`${this.apiUrl}/Movies/${id}/videos`, {responseType: 'text' as 'json'});
+
+  }
+
+  toggleFavoritesList(item: MovieDto): void {
+    const index = this.favoriteItemsList.findIndex(movie => movie.id === item.id);
     //condition to add to the list
     if (index > -1) {
       this.favoriteItemsList.splice(index, 1);
@@ -57,19 +70,18 @@ export class DataService {
     }
   }
 
-  isInFavorite(movie:Movie) : boolean {
-    return this.favoriteItemsList.some(showItem => showItem.index === movie.index);
+  isInFavorite(movie:MovieDto) : boolean {
+    return this.favoriteItemsList.some(showItem => showItem.id === movie.id);
   }
 
-  addToFavoritesList(movie: Movie): void {
+  addToFavoritesList(movie: MovieDto): void {
     this.favoriteItemsList.push(movie);
   }
 
-  removeFromFavoritesList(movie: Movie): void {
-    const index = this.favoriteItemsList.findIndex(showItem => showItem.index === movie.index);
-    if (index !== -1) {
-      this.favoriteItemsList.splice(index, 1);
+  removeFromFavoritesList(movie: MovieDto): void {
+    const id = this.favoriteItemsList.findIndex(showItem => showItem.id === movie.id);
+    if (id !== -1) {
+      this.favoriteItemsList.splice(id, 1);
     }
   }
 }
-

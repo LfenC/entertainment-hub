@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../models/movie';
+import { MovieDto } from '../../models/movie';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -8,11 +8,13 @@ import { DataService } from '../../services/data.service';
   styleUrl: './show-item.component.scss'
 })
 export class ShowItemComponent {
-  @Input() showItem : Movie | null = null;
+
+  @Input() showItem : MovieDto | null = null;
+  @Input() showType: 'tvshows' | 'Movies' = 'Movies';
 
   constructor(private dataService: DataService){}
 
-  toggleFavoritesList(movie: Movie) {
+  toggleFavoritesList(movie: MovieDto) {
     if (this.isInFavorite(movie)) {
       this.dataService.removeFromFavoritesList(movie);
     }else {
@@ -20,7 +22,7 @@ export class ShowItemComponent {
     }
   }
 
-  isInFavorite(movie: Movie) : boolean {
+  isInFavorite(movie: MovieDto) : boolean {
     return this.dataService.isInFavorite(movie);
 
   }

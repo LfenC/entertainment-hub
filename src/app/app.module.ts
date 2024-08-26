@@ -17,6 +17,8 @@ import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
 import { TabViewModule} from 'primeng/tabview';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { LoginComponent } from './login/login.component';
+import { LoginRegisterComponent } from './login-register/login-register.component';
+import { GenresComponent } from './pages/genres/genres.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { LoginComponent } from './login/login.component';
     ShowItemComponent,
     ShowDetailComponent,
     SafeUrlPipe,
-    LoginComponent
+    LoginComponent,
+    LoginRegisterComponent,
+    GenresComponent
   ],
   imports: [
     BrowserModule,

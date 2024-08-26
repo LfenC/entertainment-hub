@@ -11,19 +11,22 @@
                 <div class="stat">
                     <div class="label"> Fecha de estreno:</div>
                     <div class="value">
-                        {{show.release_date| date : 'dd.MM.yyyy'}}
+                        {{show.releaseDate| date : 'dd.MM.yyyy'}}
                     </div>
                 </div>
-                <div class="stat">
+                  <div class="stat">
                     <div class="label"> Genres:</div>
                     <div class="value">
-                        <span> {{show.genre}}</span>
+                        <span *ngFor="let genre of show.genres"> {{genre.name}}</span>
                     </div>
                 </div>
+
+
+
             </div>
             <div class="col-3">
-                <img class="poster" 
-                [src]="show.image" alt="image"/>
+                <img class="poster"
+                [src]="show.imageUrl" alt="image"/>
             </div>
         </div>
         </p-tabPanel>
@@ -31,13 +34,13 @@
             <ng-container *ngIf="showVideo$ | async as showVideo">
                 <div class="grid">
                     <div class="col-4">
-                      <iframe width="560" 
-                        height="315" 
-                        [src]="showVideo | safeUrl" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
+                      <iframe width="560"
+                        height="315"
+                        [src]="showVideo | safeUrl"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen
                       ></iframe>
                     <p *ngIf="!showVideo">Video no disponible o URL inválido.</p>
@@ -46,9 +49,10 @@
             </ng-container>
         </p-tabPanel>
         <p-tabPanel header="Fotos">
-            <p>
-                AGREGAR FOTOS
-            </p>
+              <div class="col-3">
+                <img class="poster"
+                [src]="show.imageUrl" alt="image"/>
+            </div>
         </p-tabPanel>
     </p-tabView>
 </div>

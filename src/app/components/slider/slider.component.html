@@ -1,9 +1,9 @@
 
-<div class="slider" *ngIf="slides">
+<div class="slider"  *ngIf="slides">
     <ng-container *ngFor="let popularMovie of slides; let movieIndex = index">
     <div class="slide" *ngIf="movieIndex === slideIndex" @slideFade>
         <div class="slide-bg">
-            <img class="image" [src]="popularMovie.image" 
+            <img class="image" [src]="popularMovie.imageUrl"
             [alt]="popularMovie.title">
         </div>
         <div class="slide-pane">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="release-date mb-1">
                     <i class="pi pi-calendar"></i>
-                    <span> {{popularMovie.release_date | date : 'yyyy'}}</span>
+                    <span> {{popularMovie.releaseDate | date : 'yyyy'}}</span>
                 </div>
             </div>
             <div class="description">{{popularMovie.description}}</div>

@@ -1,13 +1,18 @@
-export interface tvshow {
+export interface tvShowDto {
     title: string;
-    image: string;
-    rating: string;
-    votes: string;
-    release_date: string;
+    imageUrl: string;
+    rating: number;
+    votes: number;
+    releaseDate: string;
     description: string;
     featured: boolean;
-    index: number;
+    id: number;
     type: string;
-    genre: string;
-    video: string;
-}
+    videoUrl: string;
+    genres: TvShowGenresDto[];
+  }
+  export interface TvShowGenresDto{
+    genreId: number;
+    name: string;
+  }
+    //tvShowGenres: Genre[];

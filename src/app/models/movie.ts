@@ -1,13 +1,20 @@
-export interface Movie {
+
+export interface MovieDto {
     title: string;
-    image: string;
-    rating: string;
-    votes: string;
-    release_date: string;
+    imageUrl: string;
+    rating: number;
+    votes: number;
+    releaseDate: string;
     description: string;
     featured: boolean;
-    index: number;
+    id: number;
     type: string;
-    genre: string;
-    video: string;
+    videoUrl: string;
+    genres: MovieGenresDto[];
 }
+
+export interface MovieGenresDto{
+  genreId: number;
+  name: string;
+}
+

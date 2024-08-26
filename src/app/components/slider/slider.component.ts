@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 //import { DataService } from '../../services/data.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Movie } from '../../models/movie';
+import { MovieDto } from '../../models/movie';
 
 @Component({
   selector: 'app-slider',
@@ -15,8 +15,8 @@ import { Movie } from '../../models/movie';
   ],
 })
 export class SliderComponent implements OnInit{
-  
-  @Input() slides : Movie[] = [];
+
+  @Input() slides : MovieDto[] = [];
   @Input() isHeader = false;
 
   constructor() { }
@@ -28,7 +28,7 @@ export class SliderComponent implements OnInit{
       this.changeSlide();
     }
   }
-    
+
   changeSlide(){
     setInterval(() => {
       this.slideIndex +=1;

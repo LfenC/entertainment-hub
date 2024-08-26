@@ -1,0 +1,14 @@
+.p-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.p-col-12, .p-md-6, .p-lg-4 {
+  padding: 0.1rem;
+}
+
+app-show-item {
+  max-width: 100%;
+}
+
