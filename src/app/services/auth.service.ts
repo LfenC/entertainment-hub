@@ -8,7 +8,6 @@ export class AuthService {
   constructor() { }
 
   authUser(user:any) {
-    let UserArray = []
-    if
+
   }
 }

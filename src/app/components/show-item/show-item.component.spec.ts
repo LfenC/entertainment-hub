@@ -11,7 +11,7 @@ describe('ShowItemComponent', () => {
       declarations: [ShowItemComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ShowItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
