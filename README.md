@@ -1,83 +1,84 @@
-# EntertainmentHub - Tercer Sprint
-Proyecto hecho por Lizeth Consuelo Bañuelos Ruelas.
+# EntertainmentHub – Third Sprint
+Project made by Lizeth Consuelo Bañuelos Ruelas.
 
+# Description
+Entertainment Hub is an entertainment platform where you can watch movies, TV shows, upcoming movies, top-rated and popular movies. It also features a simulated login while we add a database.
 
-# Descripción
-Entertainment Hub entretenimiento donde se pueden ver películas, programas de televisión, las próximas películas, las películas más valoradas y populares, también tiene un inicio de sesión simulado mientras agregamos una base de datos
+# Objectives
+- Implement asynchronous functionalities in the Angular project.
+- Use the **rxjs** library.
+- Perform unit testing on the functionalities.
 
-# Objetivos
-- Implementar funcionalidades asíncronas en el proyecto angular.
-- Utilizar la biblioteca rxjs.
-- Realizar pruebas unitarias a las funcionalidades.
+# Dependencies and Libraries
+- **Angular**: v17.3.11
+- **Node**: v20.11.0
+- **npm**: v10.2.4
+- **TypeScript**: v5.4.2
+- **PrimeNG**: v17.18.3
 
-# Dependencias y bibliotecas
-Angular: v17.3.11
-Node: v20.11.0
-npm : v10.2.4
-Typescript: v5.4.2
-primeng: v17.18.3
+# Project Screenshots
+![alt text](image.png)  
+![alt text](image-1.png)  
+![alt text](image-2.png)  
+![alt text](image-3.png)  
+![alt text](image-4.png)  
+![alt text](image-5.png)  
 
-# Captura de pantalla del proyecto
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
+## Responsive View
+![alt text](image-6.png)  
+![alt text](image-7.png)  
+![alt text](image-8.png)  
+![alt text](image-9.png)  
+![alt text](image-10.png)  
 
-## En responsive
-![alt text](image-6.png)
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
-![alt text](image-10.png)
+# Instructions
+1. Download the ZIP file.
+2. Unzip the ZIP file.
+3. Open your favorite IDE.
+4. If you don’t have Node.js installed, go to [nodejs.org](https://nodejs.org) to download it.
+5. Select **File > Open Folder** and find the unzipped folder. Click on it and open it.
+6. Open a terminal in your IDE.
+7. In the root of the project, run the command `npm install` to install the dependencies.
+8. Once the dependencies are installed, run the command `ng serve` to start the Angular project. Wait until it compiles, then open your browser and go to the given address.
 
-# Instrucciones
-- Descarga el archivo ZIP
-- Descomprime el archivo ZIP
-- Abre tu IDE favorito
-- Si no tienes instalado Node.js, ve a nodejs.org para descargarlo.
-- Seleccione "Archivo" > "Abrir carpeta" y busque la carpeta que descomprimió. Luego haga clic en la carpeta y ábrala.
-- Abre una terminal en tu IDE.
-- En la raíz del proyecto, ejecute el comando `npm install` para instalar las dependencias.
-- Una vez que tengas las dependencias instaladas ejecuta el comando `ng save` para iniciar el proyecto Angular y espera hasta que se compile para abrir tu navegador e ir a la dirección.
+# How It Was Made
+To start the project, I first reviewed different platforms and designs on the web for movie platforms to get an idea of how to create my own. However, I noticed that many looked similar, so I needed to add key details to differentiate mine and learn more about interface design.
 
-# Descripción de como se hizo
-Para comenzar el proyecto primero se estuvieron revisando diferentes plataformas y diseños en la web sobre plataformas de películas, para obtener una idea de cómo elaborar una propia, sin embargo me di cuenta de que muchas se parecían y tendría que poner detalles clave para diferenciarlas y aprender más sobre diseño de interfaces.
-Una vez se llegó a una idea más clara, se procedió a buscar videos sobre Angular ya que es algo nuevo para mi al igual que las pruebas unitarias (solo había realizado los proyectos pero no con testing). Busqué ejemplos sobre ecommerce ya que podría realizarlos de esa manera y ver la implementación y desarrollo de los componentes.
-Luego, comencé a desarrollar componentes como el header, el logo, el footer, posterior a eso se creó un json con películas para poder simular una base de datos, se crearon filtros y atributos para las películas conforme se necesitaban para filtrar las películas.
-En adición a lo anterior, se investigó sobre testing en distintos páginas web sobre todo ejemplos prácticos para lograr implementarlas en mi proyecto en las funciones qeu filtran películas, entre otras.
+Once I had a clearer idea, I searched for videos on Angular since it was new to me, as were unit tests (I had only made projects before without testing). I looked for e-commerce examples since I could implement them similarly and understand component development.
 
-# Reporte de Code Coverage y de testing
-##Code coverage
-![alt text](image-11.png)
+I began by developing components like the header, logo, and footer. Then I created a JSON file with movies to simulate a database. Filters and attributes for movies were added as needed for filtering.
 
-![alt text](image-12.png)
+Additionally, I researched testing on different websites, focusing on practical examples to implement in my project for functions like filtering movies, among others.
 
+# Code Coverage & Testing Report
+## Code Coverage
+![alt text](image-11.png)  
+![alt text](image-12.png)  
 
-# Problemas conocidos
-Los links de videos de Youtube en la pestaña video de las películas.
-El tamaño de las imágenes en las descripciones de las películas se ven diferentes.
-El test del pipe del url es necesario hacerlo ya que no lo había manejado antes. Se debe investigar o preguntar.
+# Known Issues
+- YouTube video links in the movie’s “video” tab.
+- The image sizes in the movie descriptions look inconsistent.
+- The URL pipe test still needs to be done, as I had not used it before. This requires further research or asking for help.
 
-# Retrospectiva
+# Retrospective
 
-## ¿Qué hice bien?
-Aprender a manejar Angular, primeflex para que sea responsive así como primeng,
+## ✅ What went well?
+- Learning to use Angular, PrimeFlex for responsiveness, and PrimeNG.
 
-## ¿Qué no salió bien?
-El componente "slider" no quedó como me gustaría y para el responsive no se ve adecuado, por lo que aún se piensa si es necesario dejarlo o cambiarlo a otro mejor hecho.
-Se requiere mejorar la UI.
-Realizar el test de los links de youtube ya que es la primera vez que lo manejo.
-Agregar la función añadir a favoritos ya que me enfoqué en otras funciones.
+## ⚠️ What didn’t go well?
+- The “slider” component didn’t turn out how I wanted, and it doesn’t look good in responsive view. I’m considering whether to keep it or replace it.
+- UI needs improvement.
+- Testing YouTube links — it’s my first time working with them.
+- Adding the “Add to Favorites” function — I focused on other features instead.
 
-## ¿Qué puedo hacer diferente?
-Elaborar mejores tests a las funcionalidades, crear que se agregue a favoritos con un ícono, además de entender realmente como quiero desarrollar la interfaz de inicio y entender más a fondo como puedo filtrar por géneros para el siguiente sprint de manera que pueda terminar mi header y sus componentes.
-También desarrollar la descripción pero de las series de televisión.
-Crear solo un archivo json para manejar la simulación de base de datos de series y películas ya que de momento estan separadas.
-Enfocarme en la funcionalidad de agregar a favoritos 
-# Pruebas unitarias
+## 💡 What can I do differently?
+- Create better tests for functionalities.
+- Implement “Add to Favorites” with an icon.
+- Clearly define how I want to develop the home interface.
+- Better understand how to filter by genres for the next sprint so I can finish my header and its components.
+- Add TV show descriptions.
+- Use a single JSON file to simulate a database for both series and movies (currently, they’re separate).
+- Focus on the “Add to Favorites” feature.
 
-Para ejecutar las pruebas unitarias, abra la terminal y escribe el comando `ng test` y para obtener el code coverage escribe el comando `ng test --code-coverage`.
-
-
+# Unit Testing
+To run the unit tests, open the terminal and type the command `ng test` and to get the code coverage type the command `ng test --code-coverage`.
